@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Done_input_screen-->
+    <TextView
+        android:id="@+id/tv_input"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="right|center_vertical"
+        android:hint="@string/zero"
+        android:textColorHint="@color/lavender"
+        android:textSize="60sp"
+        android:textColor="@color/lavender"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_eight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- done btn_clear-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clear"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:layout_marginStart="3dp"
+        android:onClick="onClear"
+        android:text="@string/clr"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_nine"
+        app:layout_constraintTop_toTopOf="@+id/btn_nine" />
+
+    <!-- Done-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_divide"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:onClick="onOperator"
+        android:layout_marginStart="3dp"
+        android:text="@string/divide_sign"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_six"
+        app:layout_constraintTop_toBottomOf="@+id/btn_clear"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_multiply"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:onClick="onOperator"
+        android:text="@string/multiply_sign"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginStart="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_three"
+        app:layout_constraintTop_toBottomOf="@+id/btn_divide"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <!--Done-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_minus"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:onClick="onOperator"
+        android:text="@string/minus_sign"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btn_multiply"
+        app:layout_constraintTop_toBottomOf="@+id/btn_multiply" />
+
+    <!-- Done-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:gravity="center"
+        android:onClick="onOperator"
+        android:text="@string/add_sign"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/btn_minus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_equal"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="3dp"
+        android:gravity="center"
+        android:onClick="onEqual"
+        android:text="@string/equal_sign"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_add"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dot"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDot"
+        android:text="@string/dot_symbol"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btn_equal"
+        app:layout_constraintEnd_toEndOf="@+id/btn_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_zero"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="3dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_0"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_equal"
+        app:layout_constraintEnd_toStartOf="@id/btn_minus"
+        app:layout_constraintStart_toEndOf="@+id/btn_dot"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <!-- Row 3 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_one"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_1"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_dot"
+        app:layout_constraintEnd_toStartOf="@id/btn_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_two"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_2"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_zero"
+        app:layout_constraintEnd_toStartOf="@id/btn_three"
+        app:layout_constraintStart_toEndOf="@id/btn_one"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_three"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_3"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_zero"
+        app:layout_constraintEnd_toStartOf="@id/btn_multiply"
+        app:layout_constraintStart_toEndOf="@id/btn_two"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_four"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_4"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_one"
+        app:layout_constraintEnd_toStartOf="@id/btn_five"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_five"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_5"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_two"
+        app:layout_constraintEnd_toStartOf="@id/btn_six"
+        app:layout_constraintStart_toEndOf="@id/btn_four"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_six"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_6"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_three"
+        app:layout_constraintEnd_toStartOf="@id/btn_divide"
+        app:layout_constraintStart_toEndOf="@id/btn_five"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+
+    <!-- Row 5 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_seven"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_7"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_four"
+        app:layout_constraintEnd_toStartOf="@id/btn_eight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_eight"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_8"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_five"
+        app:layout_constraintEnd_toStartOf="@id/btn_nine"
+        app:layout_constraintStart_toEndOf="@id/btn_seven"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_nine"
+        android:layout_width="0dp"
+        android:layout_height="95dp"
+        android:backgroundTint="@color/white"
+        android:layout_marginEnd="3dp"
+        android:gravity="center"
+        android:onClick="onDigit"
+        android:text="@string/_9"
+        android:textColor="@color/lavender"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_six"
+        app:layout_constraintEnd_toStartOf="@id/btn_divide"
+        app:layout_constraintStart_toEndOf="@id/btn_eight"
+        app:strokeColor="@color/lavender"
+        app:strokeWidth="3dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
